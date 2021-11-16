@@ -2,17 +2,22 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.nuxeo.ecm.distribution</groupId>
-    <artifactId>nuxeo-distribution</artifactId>
-    <version>10.10</version>
+    <groupId>org.nuxeo</groupId>
+    <artifactId>nuxeo-parent</artifactId>
+    <version>2021.10</version>
   </parent>
 
   <groupId>org.acme</groupId>
   <artifactId>nuxeo-webengine-easyshare-override-parent</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.0-SNAPSHOT</version>
   <name>Nuxeo webengine easyshare override parent</name>
   <description />
   <packaging>pom</packaging>
+
+  <properties>
+    <nuxeo.target.version>2021.*</nuxeo.target.version>
+    <nuxeo.skip.enforcer>true</nuxeo.skip.enforcer>
+  </properties>
 
   <modules>
     <module>nuxeo-webengine-easyshare-override-core</module>
@@ -29,7 +34,7 @@
   <repositories>
     <repository>
       <id>public</id>
-      <url>http://maven.nuxeo.org/nexus/content/groups/public</url>
+      <url>https://packages.nuxeo.com/repository/public</url>
       <releases>
         <enabled>true</enabled>
       </releases>
@@ -38,14 +43,13 @@
       </snapshots>
     </repository>
     <repository>
-      <id>public-snapshot</id>
-      <url>http://maven.nuxeo.org/nexus/content/groups/public-snapshot</url>
+      <id>maven-private</id>
+      <url>https://packages.nuxeo.com/repository/maven-private</url>
       <releases>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
       </releases>
       <snapshots>
-        <updatePolicy>always</updatePolicy>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
       </snapshots>
     </repository>
     <repository>
@@ -64,7 +68,7 @@
   <pluginRepositories>
     <pluginRepository>
       <id>public</id>
-      <url>http://maven.nuxeo.org/nexus/content/groups/public</url>
+      <url>https://packages.nuxeo.com/repository/public</url>
       <name>Nuxeo releases</name>
       <releases>
         <enabled>true</enabled>
@@ -74,11 +78,12 @@
       </snapshots>
     </pluginRepository>
   </pluginRepositories>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>org.acme</groupId>
-        <artifactId>nuxeo-webengine-easyshare-override</artifactId>
+        <artifactId>nuxeo-webengine-easyshare-override-core</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>

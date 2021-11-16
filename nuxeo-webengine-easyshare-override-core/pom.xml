@@ -6,10 +6,19 @@
   <parent>
     <groupId>org.acme</groupId>
     <artifactId>nuxeo-webengine-easyshare-override-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
   </parent>
-  <artifactId>nuxeo-webengine-easyshare-override</artifactId>
+
+  <artifactId>nuxeo-webengine-easyshare-override-core</artifactId>
   <name>Nuxeo webengine easyshare override</name>
   <description></description>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.nuxeo.ecm</groupId>
+      <artifactId>nuxeo-easyshare-core</artifactId>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
 
 </project>

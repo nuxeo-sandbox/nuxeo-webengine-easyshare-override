@@ -3,12 +3,11 @@
   <parent>
     <groupId>org.acme</groupId>
     <artifactId>nuxeo-webengine-easyshare-override-parent</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>nuxeo-webengine-easyshare-override-package</artifactId>
-  <version>1.0.0</version>
   <packaging>zip</packaging>
   <name>Nuxeo webengine easyshare override package - Nuxeo webengine easyshare override</name>
 
@@ -24,7 +23,7 @@
     <!-- Additional bundles to be deployed by the MP -->
     <dependency>
       <groupId>org.acme</groupId>
-      <artifactId>nuxeo-webengine-easyshare-override</artifactId>
+      <artifactId>nuxeo-webengine-easyshare-override-core</artifactId>
     </dependency>
   </dependencies>
 
